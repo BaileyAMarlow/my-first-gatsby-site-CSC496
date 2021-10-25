@@ -38,11 +38,11 @@ const getPokemonData = names =>
     })
   )
 
-exports.createPages = async ({ actions: { createPage } }) => {
-  const allPokemon = await getPokemonData(["mew", "ditto", "squirtle"])
-  createPage({
-    path: `/pokemon`,
-    component: require.resolve("./src/templates/all-pokemon.js"),
-    context: { allPokemon },
-  })
-}
+//exports.createPages = async ({ actions: { createPage } }) => {
+  //const allPokemon = await getPokemonData(["mew", "ditto", "squirtle"])
+ // createPage({
+  //  path: `/pokemon`,
+  //  component: require.resolve("./src/templates/all-pokemon.js"),
+  //  context: { allPokemon },
+ // })
+//}
