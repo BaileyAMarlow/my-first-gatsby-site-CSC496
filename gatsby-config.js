@@ -10,6 +10,7 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-emotion",
     "@emotion/react",
+    "rumble-charts",
     {
       resolve: "gatsby-source-filesystem",
       options: {

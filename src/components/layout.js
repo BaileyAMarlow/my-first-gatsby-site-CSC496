@@ -29,7 +29,7 @@ const Layout = ({ pageTitle, children }) => {
   `)
   return (
     <div className={container}>
-      <Global
+      {/* <Global
         styles={css`
           * {
             box-sizing: border-box;
@@ -42,8 +42,8 @@ const Layout = ({ pageTitle, children }) => {
               : theme.light.backgroud};
           }
         `}
-      />
-      {children}
+      /> */}
+      {/*{children}*/}
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
       <header className={siteTitle}>{data.site.siteMetadata.title}</header>
       <Navbar />

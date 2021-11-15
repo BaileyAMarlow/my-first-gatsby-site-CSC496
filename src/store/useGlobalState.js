@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 
-const reducer = (state, actioin) => {
+const reducer = (state, action) => {
     switch (action.type) {
         case "TOGGLE_DARK_MODE":
             return { ...state, isDark: !state.isDark }
@@ -10,9 +10,11 @@ const reducer = (state, actioin) => {
 }
 
 const useGlobalState = () => {
-    const [state, dispatch] = useReducer (reducer, { isDark: false})
-
-    return { state, dispatch}
-}
+    const [state, dispatch] = useReducer(reducer, {
+      isDark: false
+    });
+  
+    return { state, dispatch };
+  };
 
 export default useGlobalState
