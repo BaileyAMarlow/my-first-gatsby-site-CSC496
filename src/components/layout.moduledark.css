@@ -1,31 +1,34 @@
-.container {
+.containerdark {
     margin: auto;
     max-width: 500px;
     font-family: sans-serif;
   }
 
-  .heading {
+  .headingdark {
     color: rebeccapurple;
   }
 
-  .nav-links {
+  .nav-links-dark {
     display: flex;
     list-style: none;
     padding-left: 0;
   }
 
-  .nav-link-item {
+  .nav-link-item-dark {
     padding-right: 2rem;
   }
   
-  .nav-link-text {
-    color: black;
+  .nav-link-text-dark {
+    color: white;
   }  
 
-  .site-title {
+  .site-title-dark {
     font-size: 3rem;
     color: gray;
     font-weight: 700;
     margin: 3rem 0;
   }
 
+  .background-dark {
+      background-color: black;
+  }
