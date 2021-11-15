@@ -7,6 +7,9 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-plugin-styled-components",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-emotion",
+    "@emotion/react",
     {
       resolve: "gatsby-source-filesystem",
       options: {
