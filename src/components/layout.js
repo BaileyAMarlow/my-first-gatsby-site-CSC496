@@ -8,25 +8,32 @@ import {
     navLinkItem,
     navLinkText,
     siteTitle,
+    pageText,
   } from './layout.module.css'
 import {
-    containerDark,
     headingDark,
     navLinksDark,
     navLinkItemDark,
     navLinkTextDark,
-    siteTitleDark,
-} from './layout.moduledark.css'
-import { css, useTheme } from 'styled-components'
-import Context from '../store/context'
-import { Global } from "@emotion/react"
+    pageTextDark,
+} from './layoutdark.module.css'
+import { createGlobalStyle } from 'styled-components'
 
 const Layout = ({ pageTitle, children }) => {
-  const { state } = React.useContext(Context);
-
-  const theme = useTheme();
-
   const [isDark, setDark] = React.useState(false)
+
+  const GlobalStyle = createGlobalStyle`
+  body {
+    background-color : ${isDark ? "black" : "white"}
+  }
+  h1,
+  h2,
+  p,
+  ul,
+  li {
+    color : ${isDark ? "white" : "black"}
+  }
+  `
 
   const data = useStaticQuery(graphql`
     query {
@@ -38,9 +45,10 @@ const Layout = ({ pageTitle, children }) => {
     }
   `)
   return (
-    <div className={isDark ? containerDark : container}>
+    <div className={container}>
+      <GlobalStyle/>
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
-      <header className={isDark ? siteTitleDark : siteTitle}>{data.site.siteMetadata.title}</header>
+      <header className={siteTitle}>{data.site.siteMetadata.title}</header>
       <Navbar />
       <nav>
         <ul className={isDark ? navLinksDark : navLinks}>
@@ -67,7 +75,9 @@ const Layout = ({ pageTitle, children }) => {
         <button onClick={() => setDark(!isDark)} >
         Toggle Dark Mode
         </button>
-      <h2>Dark Mode is {isDark ? "on" : "off"}</h2>
+      <h2 className={isDark ? pageTextDark : pageText}>
+        Dark Mode is {isDark ? "on" : "off"}
+      </h2>
       </main>
     </div>
   )
